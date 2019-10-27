@@ -1,10 +1,12 @@
 body {
-  margin: 0;
+  margin: 0 0 0 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(0deg, rgb(43, 44, 44, 0.1), rgb(43, 44, 44, 0.1)), url(./assets/wiki22.jpg);
+  background-size: cover;
 }
 
 code {

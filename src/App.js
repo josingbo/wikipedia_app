@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-function App() {
+import './App.css'
+import Search from './components/Search';
+
+import fetchDataApi from './hooks/api/fetchDataApi'
+import WikiPage from './components/WikiPage'
+
+const renderSearch = (data, term, handleChange, isLoading, isError) =>    
+    <Search 
+      term={term}
+      handleChange={handleChange}
+      data={data}
+      isLoading={isLoading}
+      isError={isError}
+    />
+
+export default () => {
+  const [term, setTerm] = useState('');
+  
+  const handleChange = e => {
+    setTerm(e.target.value)
+  }
+  
+  const [{ data, isLoading, isError }] = fetchDataApi(term, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Fragment>
+        <Switch>
+          <Route exact path="/" render={() => 
+            <Search 
+              term={term}
+              handleChange={handleChange}
+              data={data}
+              isLoading={isLoading}
+              isError={isError}
+            />
+            }           
+          />
+          <Route path="/:title" component={WikiPage} />
+        </Switch>
+      </Fragment>
+    </Router>
   );
 }
-
-export default App;

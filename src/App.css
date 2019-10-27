@@ -1,22 +1,142 @@
-.App {
+.container {
+  height: 100vh;
+  width: 100%;
+}
+
+input[type="text"] {
+  width: 350px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 20px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 90%;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+.search-button {
+  top: 92px;
+  margin-left: -2px;
+  position: absolute;
+  border: none;
+  outline: none;
+  background: none;
+  width: 50px;
+}
+
+.search-button img {
+  width: 25px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.result-list {
   text-align: center;
+  margin-left: 270px;
 }
 
-.App-logo {
-  height: 40vmin;
+.result {
+  background: rgba(255, 255, 255, 0.89);
+  height: 35px;
+  padding-left: 10px;
+  margin: 10px 0 20px 0;
+  font-size: 20px;
+  width: 65%;
+  color: beige;
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.result a {
+  text-decoration: none;
+}
+
+.result a:link {
+  color: rgb(72, 72, 177);
+}
+
+.result a:active {
+  color: rgb(72, 72, 177);
+}
+
+.result a:visited {
+  color: rgb(72, 72, 177);
+}
+
+.result a:hover {
+  color: hotpink;
+}
+
+.move-enter {
+  opacity: 0.01;
+  transform: translate(-40px, 0)
+}
+
+.move-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 500ms ease-in;
+}
+
+.move-exit {
+  opacity: 1;
+  transform: translate(0, 0)
+}
+
+.move-exit-active {
+  opacity: 0.01;
+  transform: translate(40px, 0);
+  transition: all 500ms ease-in;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(114, 125, 158);
+  margin-bottom: 5px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
   color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
-.App-link {
-  color: #09d3ac;
+li h3 {
+  color: white;
+  padding-left: 15px;
+  font-size: 1.3rem;
+  letter-spacing: .2rem;
+}
+
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
