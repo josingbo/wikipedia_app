@@ -7,15 +7,6 @@ import Search from './components/Search';
 import fetchDataApi from './hooks/api/fetchDataApi'
 import WikiPage from './components/WikiPage'
 
-const renderSearch = (data, term, handleChange, isLoading, isError) =>    
-    <Search 
-      term={term}
-      handleChange={handleChange}
-      data={data}
-      isLoading={isLoading}
-      isError={isError}
-    />
-
 export default () => {
   const [term, setTerm] = useState('');
   

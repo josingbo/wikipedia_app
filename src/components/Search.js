@@ -2,7 +2,6 @@ import React from 'react';
 import ResultList from './ResultList'
 
 export default ({term, handleChange, data, isLoading, isError}) => {
-  console.log('Data', data)
     return (
       <>
         <h1>Wikipedia App</h1>
